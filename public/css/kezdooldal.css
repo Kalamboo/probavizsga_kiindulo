@@ -1,0 +1,20 @@
+article{
+    margin: 20px;
+}
+
+thead{
+    background-color: rgb(31, 8, 8);
+    color: aliceblue;
+}
+
+tr:nth-child(even) {
+    background-color: #8c91ac;
+}
+
+tr{
+    border-bottom: 1px solid rgb(99, 99, 99);
+}
+
+.eltun{
+    display: none;
+}

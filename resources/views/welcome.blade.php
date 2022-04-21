@@ -17,7 +17,9 @@
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="./js/dogaklistazasa.js" type="module"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/dogaklistazasa.js"></script>
+    <script src="./js/script.js"></script>
 </head>
 
 <body class="antialiased">
@@ -46,40 +48,49 @@
             @endif
         </section>
         <article>
-            <div class="galeria">
-                <img src="./kepek/kep_11.png" alt="Szakdolgozat kép">
+            <div id="szakdogaSablon">
+                <table>
+                    <tr class="szakdoga">
+                        <td class="szakdogCim"></td>
+                        <td class="keszNev"></td>
+                        <td class="gitLink"></td>
+                        <td class="oldLink"></td>
+                        <td class="modositas"><button>MÓDOSÍT</button></td>
+                        <td class="torles"><button>TÖRÖL</button></td>
+                    </tr>
+                </table>
             </div>
-            <div class="galeria">
-                <img src="./kepek/kep_1.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_2.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_8.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_3.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_10.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_4.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_5.png" alt="Szakdolgozat kép">
-            </div>
-            <div class="galeria">
-                <img src="./kepek/kep_6.png" alt="Szakdolgozat kép">
-            </div>
+            <table class="szakdogaAlap">
+                <thead>
+                    <tr>
+                        <th>Szakdolgozat címe</th>
+                        <th>Készítők neve</th>
+                        <th>GitHub link</th>
+                        <th>Szakdolgozat elérhetősége</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="szakdogakLista">
 
-
-
-
-
-
-            <div class="galeria">
+                </tbody>
+            </table>
+            <div>
+                <form action="/action_page.php">
+                    <label for="none" class="eltun">id:</label><br>
+                    <input type="text" id="none" name="none" class="eltun"><br>
+                    <label for="szakdoga_nev">First name:</label><br>
+                    <input type="text" id="szakdoga_nev" name="szakdoga_nev"><br>
+                    <label for="githublink">Last name:</label><br>
+                    <input type="text" id="githublink" name="githublink"><br><br>
+                    <label for="oldallink">Last name:</label><br>
+                    <input type="text" id="oldallink" name="oldallink"><br><br>
+                    <label for="tagokneve">Last name:</label><br>
+                    <input type="text" id="tagokneve" name="tagokneve"><br><br>
+                    <div>
+                        <input type="submit" value="MÓDOSÍT" id="ajaxModosit">
+                    </div>
+                </form> 
             </div>
         </article>
         <footer class="kozepre">
